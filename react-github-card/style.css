@@ -4,8 +4,7 @@
 
 .demo-card-wide > .mdl-card__title {
   color: #fff;
-  height: 176px;
-  background: url('../assets/demos/welcome_card.jpg') center / cover;
+  height: 160px;
 }
 
 .demo-card-wide > .mdl-card__menu {
@@ -19,3 +18,9 @@
 	left: 0;
 	z-index: 1;
 }
+
+.mdl-card__actions,
+.mdl-card__title-text,
+.mdl-card__actions .mdl-card--border,
+.mdl-card__menu,
+.mdl-card__supporting-text { z-index: 10; }
