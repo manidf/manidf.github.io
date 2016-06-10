@@ -15,10 +15,10 @@ var Main = React.createClass({
 	render: function() {
 		return (
 			<div>
-		Hello
+				Hello
 			</div>
 		)
 	}
 });
 
-React.render(<Main />, document.getElementById("root"));
+ReactDOM.render(<Main />, document.getElementById("root"));
