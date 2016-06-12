@@ -6,8 +6,8 @@ http://manidf.github.io/
 ## Playground
 ### ReactJs
 
-Run a simple python HTTP server, and nivaget to the project folder.  ( Make it work - thanks [ettienemarias](ettienemarias) ) 
- 
+Run a simple python HTTP server, and navigate to the project folder.  ( Make it work - thanks [ettienemarias](ettienemarias) ) 
+
 ```
 python -m SimpleHTTPServer 8000
 ```
