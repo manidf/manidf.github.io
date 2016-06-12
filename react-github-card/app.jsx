@@ -22,9 +22,9 @@ var Card = React.createClass({
 				    Followers: {this.state.followers}
 				  </div>
 				  <div className="mdl-card__actions mdl-card--border">
-				    <a className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-				      FOLLOW
-				    </a>
+				    <a href={this.state.html_url} className="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" target="_blank">
+				      VIEW PROFILE
+				  	</a>
 				  </div>
 				  <div className="mdl-card__menu">
 				    <button className="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
@@ -53,7 +53,7 @@ var Form = React.createClass({
 					<div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 						<input className="mdl-textfield__input" type="text" id="login" ref="login" />
 					</div>
-					<button className="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect">
+					<button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
 						ADD USER
 					</button>
 				</form>
