@@ -38,16 +38,45 @@ var Card = React.createClass({
 	}
 });
 
-var Main = React.createClass({
-	getInitialState: function() {
-		return { logins: ['zoidbergwill', 'MaggotMouth', 'nicja', 'manidf', 'r00ster', 'etiennemarais', 'BradWhittington', 'garykrige', 'johnmarkmassey']}
+var Form = React.createClass({
+	handleSubmit: function(e) {
+		e.preventDefault();
+		// access value of text input el. use 'ref' attribute. Pass in the reference we added to the input
+		var loginInput = this.refs.login;
+		this.props.addCard(loginInput.value);
+		loginInput.value = '';
 	},
 	render: function() {
+		return (
+			<div className="mdl-grid">
+				<form onSubmit={this.handleSubmit}>
+					<div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input className="mdl-textfield__input" type="text" id="login" ref="login" />
+					</div>
+					<button className="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect">
+						ADD USER
+					</button>
+				</form>
+			</div>
+		)
+	}
+});
+
+var Main = React.createClass({
+	getInitialState: function() {
+		return { logins: []};
+	},
+	addCard: function(loginToAdd) {
+		this.setState({ logins: this.state.logins.concat(loginToAdd) });
+	},
+	render: function() {
+		// dynamically create cards
 		var cards = this.state.logins.map(function(login) {
 			return ( <Card login={login} />);
 		});
 		return (
 			<div>
+				<Form addCard={this.addCard} />
 				{cards}
 			</div>
 		)
